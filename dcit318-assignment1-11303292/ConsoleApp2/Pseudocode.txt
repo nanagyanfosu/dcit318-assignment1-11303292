@@ -1,0 +1,19 @@
+Pseudocode
+
+START
+
+INT ticket = 10
+DOUBLE discountPercent = 0
+
+DISPLAY "Enter your age: "
+
+INPUT age
+ 
+IF age >= 65 or age <= 12
+
+ticket = ticket - (ticket * 30 / 100)  //GHs7 is 30% off GHc10
+ELSE 
+
+END IF
+
+DISPLAY "You will pay GHs " + ticket + " for your ticket.";  
