@@ -1,0 +1,40 @@
+START
+
+DEFINE FUNCTION Triangle(sideOne, sideTwo, sideThree)
+    IF sideOne = sideTwo AND sideTwo = sideThree THEN
+        RETURN "Equilateral triangle"
+    ELSE IF sideOne = sideThree OR sideTwo = sideThree OR sideOne = sideTwo THEN
+        RETURN "Isosceles triangle"
+    ELSE
+        RETURN "Scalene triangle"
+    ENDIF
+END FUNCTION
+
+LOOP FOREVER
+    DISPLAY "***********Triangle Type Identifier***********"
+
+    DISPLAY "Enter length of side one: "
+    INPUT sideOne
+    CONVERT sideOne TO number -> firstSide
+
+    DISPLAY "Enter length of side two: "
+    INPUT sideTwo
+    CONVERT sideTwo TO number -> secondSide
+
+    DISPLAY "Enter length of side three: "
+    INPUT sideThree
+    CONVERT sideThree TO number -> thirdSide
+
+    triangleType = CALL Triangle(firstSide, secondSide, thirdSide)
+
+    DISPLAY "Triangle type: " + triangleType
+
+    DISPLAY "Try another triangle? (yes/no)"
+    INPUT tryAgain
+
+    IF tryAgain != "yes" THEN
+        EXIT LOOP
+    ENDIF
+END LOOP
+
+END
